@@ -57,22 +57,6 @@ Criar um sistema que permita a interação entre candidatos e equipe de RH por m
 
 ---
 
-## 🗃️ Estrutura dos Dados (`db.json`)
-
-```json
-{
-  "usuarios": [
-    {
-      "id": 1,
-      "email": "admin@rh.com",
-      "senha": "admin123",
-      "tipo": "admin"
-    }
-  ],
-  "curriculos": [],
-  "vagas": []
-}
-
 ## 🗂️ Tabelas
 
 ### 🔸 usuarios
@@ -134,3 +118,19 @@ Criar um sistema que permita a interação entre candidatos e equipe de RH por m
 | Criação e edição de currículos                     | ✅     |
 | Ações de CRUD em vagas (admin)                     | ✅     |
 | Restrições de acesso entre usuários e admins       | ✅     |
+
+## 🗃️ Estrutura dos Dados (`db.json`)
+
+```json
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "admin@rh.com",
+      "senha": "admin123",
+      "tipo": "admin"
+    }
+  ],
+  "curriculos": [],
+  "vagas": []
+}
