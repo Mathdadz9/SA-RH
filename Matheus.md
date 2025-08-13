@@ -109,7 +109,7 @@ Criar um sistema que permita a interação entre candidatos e equipe de RH por m
 
 ---
 
-## 🧪 Testes Esperados
+## 🧪 Testes Esperados.
 
 | Teste                                              | Status |
 |----------------------------------------------------|--------|
