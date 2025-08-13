@@ -72,38 +72,65 @@ Criar um sistema que permita a interação entre candidatos e equipe de RH por m
   "curriculos": [],
   "vagas": []
 }
-Tabelas
-usuarios
 
-id: número
+## 🗂️ Tabelas
 
-email: string
+### 🔸 usuarios
 
-senha: string
+| Campo   | Tipo    | Descrição                          |
+|---------|---------|------------------------------------|
+| id      | número  | Identificador único do usuário     |
+| email   | string  | E-mail do usuário (único)          |
+| senha   | string  | Senha de acesso                    |
+| tipo    | string  | Tipo de usuário: "admin" ou "usuario" |
 
-tipo: "admin" ou "usuario"
+---
 
-curriculos
+### 🔸 curriculos
 
-id, usuarioId, formacao, experiencia, habilidades, etc.
+| Campo       | Tipo     | Descrição                                |
+|-------------|----------|------------------------------------------|
+| id          | número   | Identificador único do currículo         |
+| usuarioId   | número   | ID do usuário que criou o currículo      |
+| formacao    | string   | Formação acadêmica                       |
+| experiencia | string   | Experiências profissionais               |
+| habilidades | string[] | Lista de habilidades                     |
+| ...         | ...      | Outros campos conforme necessidade       |
 
-vagas
+---
 
-id, titulo, descricao, requisitos, salario, localidade
+### 🔸 vagas
 
-🔐 Regras de Acesso
-Apenas usuários com "tipo": "admin" acessam a área administrativa
+| Campo      | Tipo     | Descrição                        |
+|------------|----------|----------------------------------|
+| id         | número   | Identificador único da vaga      |
+| titulo     | string   | Título da vaga                   |
+| descricao  | string   | Descrição das atividades         |
+| requisitos | string   | Requisitos da vaga               |
+| salario    | string   | Faixa salarial                   |
+| localidade | string   | Cidade/estado da vaga            |
 
-Usuários comuns visualizam apenas suas informações e as vagas
+---
 
-🧪 Testes Esperados
-✅ Login com dados válidos e inválidos
+## 🔐 Regras de Acesso
 
-✅ Cadastro de novos usuários com validação de e-mail
+- 🔒 **Administrador**
+  - Acesso total à área de gerenciamento de vagas e visualização de currículos.
+  - Definido com `"tipo": "admin"` no banco de dados.
 
-✅ Criação e edição de currículos
+- 👤 **Usuário Comum**
+  - Pode visualizar vagas e cadastrar currículo.
+  - Tem acesso apenas ao seu próprio perfil e currículo.
+  - Não pode acessar área administrativa.
 
-✅ Ações de CRUD em vagas (admin)
+---
 
-✅ Restrições de acesso entre usuários e administradores
+## 🧪 Testes Esperados
 
+| Teste                                              | Status |
+|----------------------------------------------------|--------|
+| Login com dados válidos e inválidos                | ✅     |
+| Cadastro de novos usuários com validação de e-mail | ✅     |
+| Criação e edição de currículos                     | ✅     |
+| Ações de CRUD em vagas (admin)                     | ✅     |
+| Restrições de acesso entre usuários e admins       | ✅     |
